@@ -45,7 +45,6 @@ pub fn encode(image: image::RgbaImage, nx: usize, ny: usize) -> String {
         1.0
     };
 
-    dbg!(maximum);
     hash.extend(encode_base83(encode_dc(dc), 4));
     for component in components {
         hash.extend(encode_base83(encode_ac(component, maximum), 2));
